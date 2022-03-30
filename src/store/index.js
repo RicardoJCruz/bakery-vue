@@ -1,9 +1,19 @@
 import { createStore } from "vuex";
 
 export default createStore({
-  state: {},
+  state: {
+    color: "blue",
+  },
   getters: {},
-  mutations: {},
-  actions: {},
+  mutations: {
+    colorChange(state, color) {
+      state.color = color;
+    },
+  },
+  actions: {
+    colorChange({ commit }, color) {
+      commit("colorChange", color);
+    },
+  },
   modules: {},
 });
